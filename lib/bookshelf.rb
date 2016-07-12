@@ -36,6 +36,19 @@ Hanami::Model.configure do
   # Alternatively, you can use a block syntax like the following:
   #
   mapping do
+    collection :activities do
+      entity     Activity
+      repository ActivityRepository
+
+      attribute :id,         Integer
+      attribute :timestamp,  Time
+      attribute :action,     String
+      attribute :old_title,  String
+      attribute :old_author, String
+      attribute :new_title,  String
+      attribute :new_author, String
+    end
+
     collection :books do
       entity     Book
       repository BookRepository

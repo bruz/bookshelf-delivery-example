@@ -1,0 +1,15 @@
+<h2>Activity</h2>
+
+<div id="activity">
+  <% if activities.any? %>
+    <ul class="activity">
+      <% activities.each do |activity| %>
+        <li>
+          <%= format_time(activity.timestamp) %>: <%= description(activity) %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="placeholder">There are no activities yet.</p>
+  <% end %>
+</div>
