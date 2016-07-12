@@ -1,6 +1,6 @@
 require 'hanami/model'
 require 'hanami/mailer'
-Dir["#{ __dir__ }/bookshelf/**/*.rb"].each { |file| require_relative file }
+Dir["#{__dir__}/bookshelf/**/*.rb"].each { |file| require_relative file }
 
 Hanami::Model.configure do
   ##
@@ -48,7 +48,7 @@ Hanami::Model.configure do
 end.load!
 
 Hanami::Mailer.configure do
-  root "#{ __dir__ }/bookshelf/mailers"
+  root "#{__dir__}/bookshelf/mailers"
 
   # See http://hanamirb.org/guides/mailers/delivery
   delivery do

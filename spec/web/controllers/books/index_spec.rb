@@ -12,7 +12,7 @@ describe Web::Controllers::Books::Index do
     @book = BookRepository.create(Book.new(title: 'TDD', author: 'Kent Beck'))
   end
 
-  it "is successful" do
+  it 'is successful' do
     response = action.call(params)
     response[0].must_equal 200
   end

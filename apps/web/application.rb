@@ -13,13 +13,10 @@ module Web
       #
       root __dir__
 
-      # Relative load paths where this application will recursively load the code.
-      # When you add new directories, remember to add them here.
+      # Relative load paths where this application will recursively load the
+      # code. When you add new directories, remember to add them here.
       #
-      load_paths << [
-        'controllers',
-        'views'
-      ]
+      load_paths << %w(controllers views)
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
       # Defaults to true.
@@ -46,9 +43,10 @@ module Web
       #
       # host 'example.org'
 
-      # URI port used by the routing system to generate absolute URLs
-      # Argument: An object coercible to integer, default to 80 if the scheme is http and 443 if it's https
-      # This SHOULD be configured only in case the application listens to that non standard ports
+      # URI port used by the routing system to generate absolute URLs Argument:
+      # An object coercible to integer, default to 80 if the scheme is http and
+      # 443 if it's https This SHOULD be configured only in case the application
+      # listens to that non standard ports
       #
       # port 443
 
@@ -57,12 +55,16 @@ module Web
       #           A Hash with options
       #
       # Options: :domain   - The domain (String - nil by default, not required)
-      #          :path     - Restrict cookies to a relative URI (String - nil by default)
-      #          :max_age  - Cookies expiration expressed in seconds (Integer - nil by default)
+      #          :path     - Restrict cookies to a relative URI (String - nil
+      #                      by default)
+      #          :max_age  - Cookies expiration expressed in seconds (Integer -
+      #                      nil by default)
       #          :secure   - Restrict cookies to secure connections
-      #                      (Boolean - Automatically set on true if currenlty using a secure connection)
+      #                      (Boolean - Automatically set on true if currently
+      #                      using a secure connection)
       #                      See #scheme and #ssl?
-      #          :httponly - Prevent JavaScript access (Boolean - true by default)
+      #          :httponly - Prevent JavaScript access (Boolean - true by
+      #                      default)
       #
       # cookies true
       # or
@@ -85,20 +87,23 @@ module Web
       #
       # default_request_format :html
 
-      # Default format for responses that doesn't take into account the request format
+      # Default format for responses that doesn't take into account the request
+      # format
       # Argument: A symbol representation of a mime type, default to :html
       #
       # default_response_format :html
 
       # HTTP Body parsers
       # Parse non GET responses body for a specific mime type
-      # Argument: Symbol, which represent the format of the mime type (only `:json` is supported)
+      # Argument: Symbol, which represent the format of the mime type (only
+      # `:json` is supported)
       #           Object, the parser
       #
       # body_parsers :json
 
       # When it's true and the router receives a non-encrypted request (http),
-      # it redirects to the secure equivalent resource (https). Default disabled.
+      # it redirects to the secure equivalent resource (https). Default
+      # disabled.
       #
       # force_ssl true
 
@@ -167,18 +172,18 @@ module Web
       #   * https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options
       #   * https://www.owasp.org/index.php/Clickjacking
       #
-      security.x_frame_options "DENY"
+      security.x_frame_options 'DENY'
 
-      # Content-Security-Policy (CSP) is a HTTP header supported by modern browsers.
-      # It determines trusted sources of execution for dynamic contents
-      # (JavaScript) or other web related assets: stylesheets, images, fonts,
-      # plugins, etc.
+      # Content-Security-Policy (CSP) is a HTTP header supported by modern
+      # browsers. It determines trusted sources of execution for dynamic
+      # contents (JavaScript) or other web related assets: stylesheets, images,
+      # fonts, plugins, etc.
       #
       # Web applications can send this header to mitigate Cross Site Scripting
       # (XSS) attacks.
       #
-      # The default value allows images, scripts, AJAX, fonts and CSS from the same
-      # origin, and does not allow any other resources to load (eg object,
+      # The default value allows images, scripts, AJAX, fonts and CSS from the
+      # same origin, and does not allow any other resources to load (eg object,
       # frame, media, etc).
       #
       # Inline JavaScript is NOT allowed. To enable it, please use:
@@ -200,7 +205,9 @@ module Web
       #  * http://content-security-policy.com/
       #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Using_Content_Security_Policy
       #
-      security.content_security_policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; font-src 'self';"
+      security.content_security_policy "default-src 'none'; script-src 'self'" \
+                                       "; connect-src 'self'; img-src 'self';" \
+                                       " style-src 'self'; font-src 'self';"
 
       ##
       # FRAMEWORKS

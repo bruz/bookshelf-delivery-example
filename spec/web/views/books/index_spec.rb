@@ -14,7 +14,9 @@ describe Web::Views::Books::Index do
 
   describe 'when there are no books' do
     it 'shows a placeholder message' do
-      rendered.must_include('<p class="placeholder">There are no books yet.</p>')
+      rendered.must_include(
+        '<p class="placeholder">There are no books yet.</p>'
+      )
     end
   end
 
@@ -30,7 +32,9 @@ describe Web::Views::Books::Index do
     end
 
     it 'hides the placeholder message' do
-      rendered.wont_include('<p class="placeholder">There are no books yet.</p>')
+      rendered.wont_include(
+        '<p class="placeholder">There are no books yet.</p>'
+      )
     end
   end
 end

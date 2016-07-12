@@ -1,0 +1,9 @@
+# This is the Hanami generator default
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - 'apps/web/application.rb'
+
+# Almost all classes in this app are self-explanatory
+Style/Documentation:
+  Enabled: false
