@@ -2,13 +2,21 @@
 
 <div id="books">
   <% if books.any? %>
-    <% books.each do |book| %>
-      <div class="book">
-        <h2><%= book.title %></h2>
-        <p><%= book.author %></p>
-      </div>
-    <% end %>
+    <ul>
+      <% books.each do |book| %>
+        <li class="book">
+          <%= link_to title_and_author(book), routes.edit_book_path(book.id) %>
+          <%=
+            form_for delete_form(book), {} do
+              submit 'Delete'
+            end
+          %>
+        </li>
+      <% end %>
+    </ul>
   <% else %>
     <p class="placeholder">There are no books yet.</p>
   <% end %>
 </div>
+
+<%= link_to 'Add a book', routes.new_book_path %>

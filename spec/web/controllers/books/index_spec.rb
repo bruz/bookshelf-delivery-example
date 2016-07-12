@@ -9,7 +9,7 @@ describe Web::Controllers::Books::Index do
   before do
     BookRepository.clear
 
-    @book = BookRepository.create(Book.new(title: 'TDD', author: 'Kent Beck'))
+    @book = Book::Create.new('TDD', 'Kent Beck').call.book
   end
 
   it 'is successful' do
