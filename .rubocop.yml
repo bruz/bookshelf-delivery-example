@@ -3,6 +3,7 @@ Style/ClassAndModuleChildren:
   EnforcedStyle: compact
   Exclude:
     - 'apps/web/application.rb'
+    - 'apps/web/views/application_layout.rb'
 
 # Almost all classes in this app are self-explanatory
 Style/Documentation:
