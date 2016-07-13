@@ -5,6 +5,10 @@ gem 'rake'
 gem 'hanami',       '0.7.3'
 gem 'hanami-model', '~> 0.5'
 
+# API
+gem 'roar'
+gem 'multi_json'
+
 gem 'pg'
 
 group :test do

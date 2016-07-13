@@ -1,6 +1,6 @@
 require 'features_helper'
 
-describe 'Books' do
+describe 'Add a book' do
   after do
     BookRepository.clear
   end

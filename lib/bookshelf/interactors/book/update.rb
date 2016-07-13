@@ -7,21 +7,34 @@ class Book::Update
 
   def initialize(id, title, author)
     @book = BookRepository.find(id)
-    @activity = Activity.new(
+    @title = title
+    @author = author
+  end
+
+  def call
+    if @book
+      @book.update(title: @title, author: @author)
+      @activity = build_activity
+
+      BookRepository.transaction do
+        @book = BookRepository.update(@book)
+        @activity = ActivityRepository.create(@activity)
+      end
+    else
+      fail!
+    end
+  end
+
+  private
+
+  def build_activity
+    Activity.new(
       timestamp: Time.now,
       action: Activity::Action::UPDATE,
       old_title: @book.title,
       old_author: @book.author,
-      new_title: title,
-      new_author: author
+      new_title: @title,
+      new_author: @author
     )
-    @book.update(title: title, author: author)
-  end
-
-  def call
-    BookRepository.transaction do
-      @book = BookRepository.update(@book)
-      @activity = ActivityRepository.create(@activity)
-    end
   end
 end
