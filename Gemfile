@@ -4,12 +4,14 @@ gem 'bundler'
 gem 'rake'
 gem 'hanami',       '0.7.3'
 gem 'hanami-model', '~> 0.5'
+gem 'pg'
 
 # API
 gem 'roar'
 gem 'multi_json'
 
-gem 'pg'
+# CLI
+gem 'thor'
 
 group :test do
   gem 'minitest'

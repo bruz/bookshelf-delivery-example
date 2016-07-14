@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'hanami/setup'
+require_relative '../lib/bookshelf'
+require_relative '../apps/cli'
+
+CLI.start(ARGV)

@@ -123,6 +123,7 @@ DEPENDENCIES
   rake
   roar
   rubocop
+  thor
 
 BUNDLED WITH
    1.11.2

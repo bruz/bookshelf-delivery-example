@@ -3,7 +3,7 @@ require 'hanami/interactor'
 class Book::Destroy
   include Hanami::Interactor
 
-  expose :activity
+  expose :activity, :book
 
   def initialize(id)
     @book = BookRepository.find(id)
