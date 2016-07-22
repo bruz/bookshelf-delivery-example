@@ -1,3 +1,2 @@
-get '/', to: 'home#index', as: :home
-
 resources :books
+root to: 'home#index'

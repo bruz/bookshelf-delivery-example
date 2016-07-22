@@ -4,8 +4,8 @@
   <div class="errors">
     <h3>There was a problem with your submission</h3>
     <ul>
-      <% params.errors.each do |error| %>
-        <li><%= error.attribute_name %> is required</li>
+      <% params.error_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
     </ul>
   </div>

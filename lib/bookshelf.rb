@@ -8,6 +8,9 @@ Hanami::Model.configure do
   #
   # Available options:
   #
+  #  * File System adapter
+  #    adapter type: :file_system, uri: 'file:///db/bookshelf_development'
+  #
   #  * Memory adapter
   #    adapter type: :memory, uri: 'memory://localhost/bookshelf_development'
   #
@@ -16,7 +19,7 @@ Hanami::Model.configure do
   #    adapter type: :sql, uri: 'postgres://localhost/bookshelf_development'
   #    adapter type: :sql, uri: 'mysql://localhost/bookshelf_development'
   #
-  adapter type: :sql, uri: ENV['BOOKSHELF_DATABASE_URL']
+  adapter type: :sql, uri: ENV['DATABASE_URL']
 
   ##
   # Migrations
@@ -28,12 +31,6 @@ Hanami::Model.configure do
   # Database mapping
   #
   # Intended for specifying application wide mappings.
-  #
-  # You can specify mapping file to load with:
-  #
-  # mapping "#{__dir__}/config/mapping"
-  #
-  # Alternatively, you can use a block syntax like the following:
   #
   mapping do
     collection :books do
@@ -54,6 +51,6 @@ Hanami::Mailer.configure do
   delivery do
     development :test
     test        :test
-    # production :stmp, address: ENV['SMTP_PORT'], port: 1025
+    # production :smtp, address: ENV['SMTP_PORT'], port: 1025
   end
 end.load!

@@ -29,16 +29,15 @@ describe Web::Controllers::Books::Create do
 
     it 're-renders the books#new view' do
       response = action.call(params)
-      response[0].must_equal 200
+      response[0].must_equal 422
     end
 
     it 'sets errors attribute accordingly' do
-      action.call(params)
+      response = action.call(params)
+      response[0].must_equal 422
 
-      refute action.params.valid?
-
-      action.errors.for('book.title').wont_be_empty
-      action.errors.for('book.author').wont_be_empty
+      action.params.errors[:book][:title].must_equal  ['is missing']
+      action.params.errors[:book][:author].must_equal ['is missing']
     end
   end
 end
