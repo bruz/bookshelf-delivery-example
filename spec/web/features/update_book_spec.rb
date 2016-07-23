@@ -33,7 +33,7 @@ describe 'Books' do
     current_path.must_equal("/books/#{@book.id}")
 
     assert page.has_content?('There was a problem with your submission')
-    assert page.has_content?('title is required')
-    assert page.has_content?('author is required')
+    assert page.has_content?('Title must be filled')
+    assert page.has_content?('Author must be filled')
   end
 end

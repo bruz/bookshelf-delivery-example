@@ -37,8 +37,8 @@ describe Web::Controllers::Books::Create do
 
       refute action.params.valid?
 
-      action.errors.for('book.title').wont_be_empty
-      action.errors.for('book.author').wont_be_empty
+      action.params.errors[:book][:title].must_equal ['is missing']
+      action.params.errors[:book][:author].must_equal ['is missing']
     end
   end
 end

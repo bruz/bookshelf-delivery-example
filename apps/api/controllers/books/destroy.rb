@@ -3,7 +3,7 @@ module Api::Controllers::Books
     include Api::Action
 
     params do
-      param :id, presence: true
+      required(:id).filled(:int?)
     end
 
     def call(params)

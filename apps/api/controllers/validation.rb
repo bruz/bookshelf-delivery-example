@@ -14,8 +14,8 @@ module Api
       end
 
       def error(code)
-        errors = params.errors.each.each_with_object({}) do |error, result|
-          result[error.attribute_name] = :missing
+        errors = params.errors.each_with_object({}) do |error, result|
+          result[error.first] = :missing
         end
 
         message = JSON.generate(

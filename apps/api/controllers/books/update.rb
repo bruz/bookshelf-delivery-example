@@ -3,9 +3,9 @@ module Api::Controllers::Books
     include Api::Action
 
     params do
-      param :id, presence: true
-      param :title
-      param :author
+      required(:id).filled(:int?)
+      required(:title).filled(:str?)
+      required(:author).filled(:str?)
     end
 
     def call(params)

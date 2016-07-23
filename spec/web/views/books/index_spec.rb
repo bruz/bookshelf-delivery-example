@@ -3,6 +3,8 @@ require 'spec_helper'
 require_relative '../../../../apps/web/views/books/index'
 
 class IndexBooksParams < Hanami::Action::Params
+  params do
+  end
 end
 
 def create_book(title, author)

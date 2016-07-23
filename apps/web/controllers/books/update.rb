@@ -5,16 +5,16 @@ module Web::Controllers::Books
     expose :book
 
     params do
-      param :id, presence: true
-      param :book do
-        param :title,  presence: true
-        param :author, presence: true
+      required(:id).filled(:int?)
+      required(:book).schema do
+        required(:title).filled(:str?)
+        required(:author).filled(:str?)
       end
     end
 
     def call(params)
       if params.valid?
-        title, author = params[:book].to_h.values_at('title', 'author')
+        title, author = params[:book].to_h.values_at(:title, :author)
         result = Book::Update.new(params[:id], title, author).call
         @book = result.book
 
