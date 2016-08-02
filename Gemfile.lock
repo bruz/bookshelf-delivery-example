@@ -120,7 +120,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    sequel (4.36.0)
+    sequel (4.37.0)
     shotgun (0.9.1)
       rack (>= 1.0)
     slop (3.6.0)
