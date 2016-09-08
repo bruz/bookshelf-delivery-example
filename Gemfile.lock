@@ -128,7 +128,7 @@ GEM
     thor (0.19.1)
     tilt (2.0.5)
     uber (0.0.15)
-    unicode-display_width (1.1.0)
+    unicode-display_width (1.1.1)
     url_mount (0.2.1)
       rack
     xpath (2.0.0)
