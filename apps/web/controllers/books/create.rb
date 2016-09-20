@@ -12,13 +12,13 @@ module Web::Controllers::Books
     end
 
     def call(params)
-      if params.valid?
-        title, author = params[:book].to_h.values_at(:title, :author)
-        result = Book::Create.new(title, author).call
-        @book = result.book
+      return unless params.valid?
 
-        redirect_to routes.books_path
-      end
+      title, author = params[:book].to_h.values_at(:title, :author)
+      result = Book::Create.new(title, author).call
+      @book = result.book
+
+      redirect_to routes.books_path
     end
   end
 end
