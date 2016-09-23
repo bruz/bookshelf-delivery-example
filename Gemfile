@@ -6,11 +6,6 @@ gem 'hanami',       '~> 0.8'
 gem 'hanami-model', '~> 0.6'
 gem 'pg'
 
-# Needed until new versions are available for all the dry-* gems
-gem 'dry-struct',     require: false, github: 'dry-rb/dry-struct'
-gem 'dry-types',      require: false, github: 'dry-rb/dry-types'
-gem 'dry-validation', require: false, github: 'dry-rb/dry-validation'
-
 # API
 gem 'roar'
 gem 'multi_json'
