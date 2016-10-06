@@ -57,7 +57,7 @@ GEM
       hanami-helpers (~> 0.4)
       hanami-utils (~> 0.8)
       tilt (~> 2.0, >= 2.0.2)
-    hanami-controller (0.7.0)
+    hanami-controller (0.7.1)
       hanami-utils (~> 0.8)
       rack (~> 1.6, >= 1.6.2)
     hanami-helpers (0.4.0)
