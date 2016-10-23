@@ -14,7 +14,7 @@ GEM
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
     dotenv (2.1.1)
-    dry-configurable (0.1.7)
+    dry-configurable (0.3.0)
       concurrent-ruby (~> 1.0)
     dry-container (0.5.0)
       concurrent-ruby (~> 1.0)
